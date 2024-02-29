@@ -1,0 +1,12 @@
+	Configurar git por primera vez:
+1.git config --global user.name "nombre usuario"
+2.git config --global user.email gmail
+	Configurar repositorio:
+Copiamos enlace del repositorio
+1.git clone + enlace del repositorio(Clonaremos el repositorio enla carpeta)
+2.git add .(Añadimos un archivo)
+3.git commit -m "comentario"(Subimos un nombre)
+4.git push (Sube)
+5.git pull (Descarga de github a PC)
+
+Solo para añadir el repositorio no usar [git remote add repositirionombre enlacedelrepositorio(añadimos el enlace y el nombre del repositorio a la carpeta que usaremos)]

@@ -1,0 +1,5 @@
+numero1=float(input("introduce un numero: "))
+numero2=float(input("introduce otro numero: "))
+division=float(numero1/numero2)
+prueba=round(division, 3)
+print(prueba)
