@@ -4,17 +4,11 @@ public class Persona {
     String dni;
     String nombre;
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "dni='" + dni + '\'' +
-                ", nombre='" + nombre + '\'' +
-                '}';
-    }
-
     public Persona(String dni, String nombre) {
         this.dni = dni;
         this.nombre = nombre;
+    }
+    public Persona() {
     }
 
     public String getDni() {
@@ -31,5 +25,12 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
