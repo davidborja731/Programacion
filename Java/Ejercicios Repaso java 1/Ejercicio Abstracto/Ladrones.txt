@@ -1,4 +1,0 @@
-Diputado{ProvinciaQueRepresenta='valencia', partidopolitico='PSOE', dni='30123456L', nombre='Joaquin'}
-Senador{ProvinciaQueRepresenta='No se', partidopolitico='PP', dni='98765321P', nombre='Pedro Manuel Rollan Ojeda'}
-Diputado{ProvinciaQueRepresenta='La rioja', partidopolitico='Podemos', dni='85693214Ñ', nombre='Antonia'}
-Diputado{ProvinciaQueRepresenta='Sevilla', partidopolitico='Sumar', dni='85632140K', nombre='Pepa'}

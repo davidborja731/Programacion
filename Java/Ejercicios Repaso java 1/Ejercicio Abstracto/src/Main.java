@@ -1,5 +1,4 @@
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,18 +37,19 @@ public class Main {
 
         //recorro la lista
         System.out.println(Lista1);
-        //añado al archivo .txt
-        File archivoescribir = new File("F:\\Grado Superior\\Programacion\\Java\\Ejercicios Repaso java 1\\Ejercicio Abstracto\\Ladrones.txt");
+        //añado al archivo.txt
         try {
-            BufferedWriter escribir = new BufferedWriter(new FileWriter(archivoescribir));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Ladrones.txt"));
             for (Legislador legislador : Lista1) {
-                escribir.write(legislador.toString());
-                escribir.newLine();
+                bufferedWriter.write(legislador.toString());
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
             }
-            escribir.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        //Ejercicio 3
 
     }
 }
+

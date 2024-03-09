@@ -5,5 +5,7 @@ public class Main_EJ_1 {
         System.out.println(pelicula1.infoPelicula());
         System.out.println(pelicula1.esantiguo());
         System.out.println(pelicula2.calculoantiguedad());
+        System.out.println(pelicula2.actualizaDatos());
+        System.out.println(pelicula2.infoPelicula());
     }
 }

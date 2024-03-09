@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EJ_1 {
@@ -43,7 +44,7 @@ public class EJ_1 {
         return año < 2000;
     }
 
-    public void actualizaDatos() {
+    public String actualizaDatos() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Dime el nuevo director ");
         String nuevodirector = scanner.next();
@@ -54,18 +55,18 @@ public class EJ_1 {
         director = nuevodirector;
         titulo = nuevoTitulo;
         año = nuevoAño;
+        return (" ");
     }
     public String calculoantiguedad() {
-        int calculo = 2024 - getAño();
+        LocalDate currentDate = LocalDate.now();
+        int año = currentDate.getYear();
+        int calculo = año - getAño();
         return "La pelicula tiene " + calculo + " años de antiguedad";
     }
+    public void CompararPeliculas() {
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+
     }
-
-
 }
 
 
