@@ -24,29 +24,6 @@ public class Crear_Leer_y_escribir_en_ficheros {
             String pregunta = scanner.next().toLowerCase();
             comprobar = pregunta.equals("si");
         }
-        System.out.println("Leo el archivo");
-        boolean comprobar2 = true;
-        while (comprobar2) {
-            System.out.println("Dime que archivo quieres leer: ");
-            String archivobuscar = scanner.next();
-            File archivoleer=new File(archivobuscar);
-            if (archivoleer.exists()) {
-                try {
-                    BufferedReader modificar = new BufferedReader(new FileReader(archivoleer));
-                    String linea;
-                    while ((linea = modificar.readLine()) != null) {
-                        System.out.println(linea);
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }else {
-                System.out.println("El archivo no existe");
-            }
-            System.out.println("¿Quieres leer otro archivo?(si o no) ");
-            String pregunta1 = scanner.next().toLowerCase();
-            comprobar2 = pregunta1.equals("si");
-        }
         System.out.println("Escribo en el archivo");
         System.out.println("Dime en que archivo quieres escribir: ");
         scanner.nextLine();
@@ -76,7 +53,29 @@ public class Crear_Leer_y_escribir_en_ficheros {
                 comprobar3=false;
             }
         }
-
+        System.out.println("Leo el archivo");
+        boolean comprobar2 = true;
+        while (comprobar2) {
+            System.out.println("Dime que archivo quieres leer: ");
+            String archivobuscar = scanner.next();
+            File archivoleer=new File(archivobuscar);
+            if (archivoleer.exists()) {
+                try {
+                    BufferedReader modificar = new BufferedReader(new FileReader(archivoleer));
+                    String linea;
+                    while ((linea = modificar.readLine()) != null) {
+                        System.out.println(linea);
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }else {
+                System.out.println("El archivo no existe");
+            }
+            System.out.println("¿Quieres leer otro archivo?(si o no) ");
+            String pregunta1 = scanner.next().toLowerCase();
+            comprobar2 = pregunta1.equals("si");
+        }
     }
 }
 

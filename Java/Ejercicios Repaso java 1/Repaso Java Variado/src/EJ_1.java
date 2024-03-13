@@ -63,10 +63,6 @@ public class EJ_1 {
         int calculo = año - getAño();
         return "La pelicula tiene " + calculo + " años de antiguedad";
     }
-    public void CompararPeliculas() {
-
-
-    }
 }
 
 
