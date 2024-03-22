@@ -16,7 +16,6 @@ public class Ejercicio {
         frame.add(new JButton("7"));
         frame.add(new JButton("8"));
         frame.add(new JButton("9"));
-
         frame.add(new JButton("+"));
         frame.add(new JButton("-"));
         frame.add(new JButton("/"));
