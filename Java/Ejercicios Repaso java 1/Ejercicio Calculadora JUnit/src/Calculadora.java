@@ -3,15 +3,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Ejercicio extends JFrame implements ActionListener{
+public class Calculadora extends JFrame implements ActionListener{
 
     private JButton[] buttonsNumbers;
     private JButton[] buttonsOperations;
     private JTextField texto;
     private String operando1;
     private String operacion;
+    private boolean ultimo;
 
-    public Ejercicio() {
+    public Calculadora() {
 
         //JFrame frame = new JFrame("Calculadora");
         this.setTitle("Calculadora");
@@ -58,7 +59,7 @@ public class Ejercicio extends JFrame implements ActionListener{
 
     }
 
-    private void creaBotonesOperaciones(JPanel panel3, Ejercicio calculadora) {
+    private void creaBotonesOperaciones(JPanel panel3, Calculadora calculadora) {
 
         buttonsOperations = new JButton[5];
         buttonsOperations[0] = new JButton("*");
@@ -89,11 +90,17 @@ public class Ejercicio extends JFrame implements ActionListener{
         String textoDelBoton = boton.getText();
         System.out.println(textoDelBoton);
         //Si se presiona un numero, tendré que escribirlo en el TextField
-        if (textoDelBoton.matches("[0-9]")){
-            texto.setText(texto.getText() + textoDelBoton);
+        if (textoDelBoton.matches("[0-9]")) {
+            if (ultimo) {
+                texto.setText(textoDelBoton);
+                this.ultimo = false;
+            } else {
+                texto.setText(texto.getText() + textoDelBoton);
+            }
         }
         //Si se presiona un operador (+-*/) --> Calcular
         else if (textoDelBoton.matches("[+\\-*/]")) {
+            this.ultimo = false;
             operando1 = texto.getText();
             texto.setText(operando1 + textoDelBoton);
             operacion = textoDelBoton;
@@ -101,7 +108,7 @@ public class Ejercicio extends JFrame implements ActionListener{
         } else if (textoDelBoton.equals("=")) {
             //guardarme el numero de la pantalla.
             String operando2 = texto.getText();
-
+            this.ultimo = true;
             operando2 = operando2.replace(operando1 + operacion, "");
             System.out.println(operando2);
             texto.setText("");
@@ -126,7 +133,7 @@ public class Ejercicio extends JFrame implements ActionListener{
 
     public static void main(String[] args) {
 
-        Ejercicio calculadora = new Ejercicio();
+        Calculadora calculadora = new Calculadora();
         calculadora.setVisible(true);
 
     }
