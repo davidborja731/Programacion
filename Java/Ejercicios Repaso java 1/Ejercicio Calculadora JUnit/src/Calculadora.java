@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calculadora extends JFrame implements ActionListener{
 
@@ -11,6 +13,7 @@ public class Calculadora extends JFrame implements ActionListener{
     private String operando1;
     private String operacion;
     private boolean ultimo;
+    private List<String> listaoperacion = new ArrayList<>();
 
     public Calculadora() {
 
@@ -96,6 +99,7 @@ public class Calculadora extends JFrame implements ActionListener{
                 this.ultimo = false;
             } else {
                 texto.setText(texto.getText() + textoDelBoton);
+                listaoperacion.add(textoDelBoton);
             }
         }
         //Si se presiona un operador (+-*/) --> Calcular
@@ -104,7 +108,6 @@ public class Calculadora extends JFrame implements ActionListener{
             operando1 = texto.getText();
             texto.setText(operando1 + textoDelBoton);
             operacion = textoDelBoton;
-            System.out.println(operando1 + operacion);
         } else if (textoDelBoton.equals("=")) {
             //guardarme el numero de la pantalla.
             String operando2 = texto.getText();
@@ -130,9 +133,28 @@ public class Calculadora extends JFrame implements ActionListener{
 
         }
     }
-
+    public String calcula(){
+        String tmp="";
+        for (String cosa : listaoperacion){
+            if (cosa.matches("[0-9]"){
+                tmp=tmp+cosa;
+                System.out.println(tmp);
+            }else{
+                operacion=cosa;
+                if (cosa.equals("+")){
+                    resultado+= Integer.parseInt(tmp);
+                } else if (cosa.equals("-")){
+                    resultado-= Integer.parseInt(tmp);
+                }else if (cosa.equals("*")){
+                    resultado*= Integer.parseInt(tmp);
+                }else if (cosa.equals("/")){
+                    resultado*= Integer.parseInt(tmp);
+                }
+            }
+        }
+        return null;
+    }
     public static void main(String[] args) {
-
         Calculadora calculadora = new Calculadora();
         calculadora.setVisible(true);
 
